@@ -1,0 +1,37 @@
+﻿<Window x:Class="CourseWork_Kaleda.Windows.StartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CourseWork_Kaleda.Windows"
+        mc:Ignorable="d"
+        Title="Касса аэрофлота" Height="300" Width="400"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <!-- Background -->
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#FF0099FF" Offset="0"/>
+                <GradientStop Color="#FF004466" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <!-- Content -->
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Welcome Text -->
+            <Label x:Name="Welcome_Text" Content="Каледа Роман 22ВП2 &quot;Касса аэрофлота&quot;" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Foreground="White"/>
+
+            <!-- Variant Text -->
+            <Label x:Name="Var_Text" Content="Вариант 21" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" FontSize="14" Foreground="White"/>
+
+            <!-- Start Button -->
+            <Button Content="Старт" HorizontalAlignment="Center" VerticalAlignment="Top" Click="StartButton_Click" Height="40" Width="120" Grid.Row="2" Background="#FF0099FF" Foreground="White" FontSize="16" Margin="0,39,0,0"/>
+        </Grid>
+    </Grid>
+</Window>

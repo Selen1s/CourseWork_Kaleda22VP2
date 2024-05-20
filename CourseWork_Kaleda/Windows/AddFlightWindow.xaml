@@ -1,0 +1,80 @@
+﻿<Window x:Class="CourseWork_Kaleda.Windows.AddFlightWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CourseWork_Kaleda.Windows"
+        mc:Ignorable="d"
+        Title="Добавление рейса" Height="298" Width="404"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <!-- Стиль для кнопок -->
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="0 5 0 5"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="DodgerBlue"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+        <!-- Стиль для текстовых полей -->
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="0 0 0 5"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="DodgerBlue"/>
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+        <!-- Стиль для DatePicker -->
+        <Style TargetType="DatePicker">
+            <Setter Property="Margin" Value="0 0 0 5"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="DodgerBlue"/>
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+        <!-- Стиль для Label -->
+        <Style TargetType="Label">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="DodgerBlue"/>
+            <Setter Property="Margin" Value="0 5 0 0"/>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="DateDepart_Text" Content="Дата отправления:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+        <DatePicker x:Name="AddDatePicker" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"/>
+
+        <Label x:Name="departureTime_Text" Content="Время отправления:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="AddTimeValue" Grid.Row="1" Grid.Column="1"/>
+
+        <Label x:Name="freeSeatsText" Content="Кол-во свободных мест:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="AddfreeSeatsValue" Grid.Row="2" Grid.Column="1"/>
+
+        <Label x:Name="departurePoint" Content="Город вылета:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="AddDeparturePointText" Grid.Row="3" Grid.Column="1"/>
+
+        <Label x:Name="destinationText" Content="Город назначения:" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="AddDestinationText" Grid.Row="4" Grid.Column="1"/>
+
+        <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top">
+            <Button x:Name="SuccessButton" Content="Ок" Click="SuccessButton_Click" Width="100" Margin="10"/>
+            <Button x:Name="CancelButton" Content="Отмена" Click="CancelButton_Click" Width="100" Margin="10"/>
+        </StackPanel>
+    </Grid>
+</Window>
