@@ -5,42 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CourseWork_Kaleda"
         mc:Ignorable="d"
-        Title="Каледа 22ВП2 Касса аэрофлота" Height="931" Width="1113"
+        Title="Каледа 22ВП2 Касса аэрофлота" Height="764" Width="1107"
         WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <!-- Стиль для кнопок -->
         <Style TargetType="Button">
-            <Setter Property="Margin" Value="0 5 0 5"/>
+            <Setter Property="Margin" Value="0 2 0 2"/>
             <Setter Property="Background" Value="White"/>
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="BorderBrush" Value="DodgerBlue"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="FontSize" Value="12"/>
-            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Padding" Value="4"/>
         </Style>
         <!-- Стиль для текстовых полей -->
         <Style TargetType="TextBox">
-            <Setter Property="Margin" Value="0 0 0 5"/>
-            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="0 0 0 2"/>
+            <Setter Property="Padding" Value="4"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="BorderBrush" Value="DodgerBlue"/>
             <Setter Property="FontSize" Value="12"/>
         </Style>
         <!-- Стиль для DataGrid -->
         <Style TargetType="DataGrid">
-            <Setter Property="RowHeight" Value="30"/>
+            <Setter Property="RowHeight" Value="25"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="BorderBrush" Value="DodgerBlue"/>
             <Setter Property="FontSize" Value="12"/>
-            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Padding" Value="4"/>
         </Style>
         <!-- Стиль для Label -->
         <Style TargetType="Label">
             <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="13"/>
             <Setter Property="Foreground" Value="DodgerBlue"/>
-            <Setter Property="Margin" Value="0 5 0 0"/>
+            <Setter Property="Margin" Value="0 2 0 0"/>
         </Style>
     </Window.Resources>
 
@@ -54,27 +54,28 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!-- Создание и удаление БД -->
-        <StackPanel Grid.Row="0" Grid.Column="0" Margin="10">
+        <StackPanel Grid.Row="0" Grid.Column="0" Margin="5">
             <Label Content="Операции с БД:"/>
-            <Button x:Name="CreateDataBaseButton" Content="Создать БД" Click="CreateDataBaseButton_Click" Width="211"/>
-            <Button x:Name="DeleteDataBaseButton" Content="Удалить БД" Click="DeleteDataBaseButton_Click" Width="211"/>
+            <Button x:Name="CreateDataBaseButton" Content="Создать БД" Click="CreateDataBaseButton_Click" Width="200"/>
+            <Button x:Name="DeleteDataBaseButton" Content="Удалить БД" Click="DeleteDataBaseButton_Click" Width="200"/>
         </StackPanel>
 
         <!-- Операции с рейсами -->
-        <StackPanel Grid.Row="1" Grid.Column="0" Margin="10">
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="5">
             <Label Content="Операции с рейсами:"/>
-            <Button x:Name="AddFlightButton" Content="Добавить рейс в БД" Click="AddFlightButton_Click" Width="211"/>
-            <Button x:Name="EditFlightButton" Content="Редактировать выбранный рейс" Click="EditFlightButton_Click" Width="211"/>
-            <Button x:Name="DeleteFlightButton" Content="Удалить выбранный рейс из БД" Click="DeleteFlightButton_Click" Width="212"/>
-            <Button x:Name="SaveToJSONButton" Content="Сохранить БД в JSON" Click="SaveToJSONButton_Click" Width="210"/>
+            <Button x:Name="AddFlightButton" Content="Добавить рейс в БД" Click="AddFlightButton_Click" Width="200"/>
+            <Button x:Name="EditFlightButton" Content="Редактировать выбранный рейс" Click="EditFlightButton_Click" Width="200"/>
+            <Button x:Name="DeleteFlightButton" Content="Удалить выбранный рейс из БД" Click="DeleteFlightButton_Click" Width="200"/>
+            <Button x:Name="SaveToJSONButton" Content="Сохранить БД в JSON" Click="SaveToJSONButton_Click" Width="200"/>
         </StackPanel>
 
         <!-- Поиск подходящих рейсов -->
-        <StackPanel Grid.Row="2" Grid.Column="0" Margin="10">
+        <StackPanel Grid.Row="2" Grid.Column="0" Margin="5">
             <Label Content="Поиск подходящих рейсов:"/>
             <Label Content="Город отправления:"/>
             <TextBox x:Name="departureCityTextBox"/>
@@ -84,19 +85,19 @@
             <TextBox x:Name="seatsNedeedTextBox"/>
             <Label Content="Дата отправления:"/>
             <DatePicker x:Name="DatePicker_Search" SelectedDateFormat="Short" FirstDayOfWeek="Monday"/>
-            <Button x:Name="SearchButton" Content="Поиск подходящих рейсов" Click="SearchButton_Click" Width="211"/>
+            <Button x:Name="SearchButton" Content="Поиск подходящих рейсов" Click="SearchButton_Click" Width="200"/>
         </StackPanel>
 
         <!-- Отмена и бронирование -->
-        <StackPanel Grid.Row="3" Grid.Column="0" Margin="10">
+        <StackPanel Grid.Row="3" Grid.Column="0" Margin="5">
             <Label Content="Отмена и бронирование:"/>
-            <Button x:Name="ReserveButton" Content="Забронировать выбранный билет" Click="ReserveButton_Click" Width="215"/>
+            <Button x:Name="ReserveButton" Content="Забронировать выбранный билет" Click="ReserveButton_Click" Width="210"/>
             <Label Content="Кол-во билетов для бронирования:"/>
             <TextBox x:Name="numTickets_TextBox"/>
         </StackPanel>
 
         <!-- Таблицы -->
-        <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="5" Margin="10">
+        <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="6" Margin="5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
@@ -127,7 +128,7 @@
             </DataGrid>
 
             <Label Content="Забронированные билеты: (отмена бронирования по правому клику на рейс)" Grid.Row="4"/>
-            <DataGrid x:Name="reservedTicketsDataGrid" MouseRightButtonDown="ReservedTicketsDataGrid_MouseRightButtonDown" IsReadOnly="True" AutoGenerateColumns="False" Grid.Row="5">
+            <DataGrid x:Name="reservedTicketsDataGrid" MouseRightButtonDown="ReservedTicketsDataGrid_MouseRightButtonDown" IsReadOnly="True" AutoGenerateColumns="False" Grid.Row="4" Margin="0,29,0,10" Grid.RowSpan="2">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID билета" Binding="{Binding TicketID}" Width="*"/>
                     <DataGridTextColumn Header="Дата и время вылета" Binding="{Binding DepartureTime, StringFormat=dd.MM.yyyy HH:mm:ss}" Width="*"/>
@@ -136,6 +137,6 @@
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
-        <Button x:Name="ExitButton" Content="Выход" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,12,0,0" Width="211" Grid.Row="4" Click="ExitButton_Click"/>
+        <Button x:Name="ExitButton" Content="Выход" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" Width="200" Grid.Row="4" Grid.Column="0" Click="ExitButton_Click"/>
     </Grid>
 </Window>

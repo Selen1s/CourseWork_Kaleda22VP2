@@ -63,8 +63,8 @@ namespace CourseWork_Kaleda
     /// </summary>
     public partial class MainWindow : Window
     {
-        /// <summary>
-        /// Список забронированных билетов.
+        /// <summary>рованных билетов.
+        /// Список заброни
         /// </summary>
         List<ReservedTicket> reservedTickets = new List<ReservedTicket>();
 
